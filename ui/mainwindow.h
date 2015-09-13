@@ -20,6 +20,8 @@ protected:
 
 private:
     Ui::MainWindow *ui;
+    QWidget        *encryptWidget;
+    QWidget        *decryptWidget;
 };
 
 #endif // MAINWINDOW_H

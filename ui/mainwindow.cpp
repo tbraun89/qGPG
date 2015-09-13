@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 
 #include "encryptwidget.h"
+#include "decryptwidget.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -16,6 +17,9 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::addTabWidgets() {
-    QWidget *encryptWidget = new EncryptWidget;
+    encryptWidget = new EncryptWidget;
     ui->tabWidget->addTab(encryptWidget, encryptWidget->windowTitle());
+
+    decryptWidget = new DecryptWidget;
+    ui->tabWidget->addTab(decryptWidget, decryptWidget->windowTitle());
 }

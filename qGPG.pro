@@ -13,7 +13,8 @@ SOURCES += main.cpp \
     ui/encryptwidget.cpp \
     crypto/plainmessage.cpp \
     crypto/encryptedmessage.cpp \
-    crypto/message.cpp
+    crypto/message.cpp \
+    ui/decryptwidget.cpp
 
 HEADERS  += \
     ui/mainwindow.h \
@@ -21,10 +22,12 @@ HEADERS  += \
     ui/encryptwidget.h \
     crypto/plainmessage.h \
     crypto/encryptedmessage.h \
-    crypto/message.h
+    crypto/message.h \
+    ui/decryptwidget.h
 
 FORMS    += \
     ui/mainwindow.ui \
-    ui/encryptwidget.ui
+    ui/encryptwidget.ui \
+    ui/decryptwidget.ui
 
 unix|win32: LIBS += -lgpgme
