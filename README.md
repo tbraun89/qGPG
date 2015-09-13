@@ -12,7 +12,7 @@ before there is an release.
 
 ## Contributing
 
-1. Fork it ()
+1. Fork it (https://github.com/tbraun89/qGPG/fork)
 2. Create your feature branch (`git checkout -b my_new_feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my_new_feature`)
