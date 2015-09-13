@@ -18,6 +18,9 @@ public:
 protected:
     void loadKeys();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::EncryptWidget *ui;
 };

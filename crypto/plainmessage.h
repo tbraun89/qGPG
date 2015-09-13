@@ -4,6 +4,7 @@
 #include "message.h"
 
 #include <string>
+#include <gpgme.h>
 
 class PlainMessage : public Message
 {

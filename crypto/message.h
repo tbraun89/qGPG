@@ -12,7 +12,7 @@ public:
     std::string getMessage();
     void        setMessage(std::string text);
 
-private:
+protected:
     std::string messageText;
 };
 

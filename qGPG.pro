@@ -5,7 +5,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = qGPG
 TEMPLATE = app
 
-CONFIG += c++11
+CONFIG += c++11 largefile
 
 SOURCES += main.cpp \
     ui/mainwindow.cpp \
