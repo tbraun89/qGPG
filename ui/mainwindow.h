@@ -15,6 +15,9 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+protected:
+    void addTabWidgets();
+
 private:
     Ui::MainWindow *ui;
 };

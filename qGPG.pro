@@ -9,15 +9,16 @@ CONFIG += c++11
 
 SOURCES += main.cpp \
     ui/mainwindow.cpp \
-    crypto/keys.cpp
+    crypto/keys.cpp \
+    ui/encryptwidget.cpp
 
 HEADERS  += \
     ui/mainwindow.h \
-    crypto/keys.h
+    crypto/keys.h \
+    ui/encryptwidget.h
 
 FORMS    += \
-    ui/mainwindow.ui
-
-OTHER_FILES +=
+    ui/mainwindow.ui \
+    ui/encryptwidget.ui
 
 unix|win32: LIBS += -lgpgme
