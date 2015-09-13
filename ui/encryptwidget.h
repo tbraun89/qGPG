@@ -19,7 +19,8 @@ protected:
     void loadKeys();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_encryptButton_clicked();
+    void on_signButton_clicked();
 
 private:
     Ui::EncryptWidget *ui;

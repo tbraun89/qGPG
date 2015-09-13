@@ -154,7 +154,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="signButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -162,7 +162,20 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Nachricht Verschlüsseln</string>
+         <string>Signieren</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="encryptButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Verschlüsseln &amp;&amp; Signieren</string>
         </property>
        </widget>
       </item>

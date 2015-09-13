@@ -26,7 +26,8 @@ void EncryptWidget::loadKeys() {
         ui->signingKey->addItem(QString(key.second.c_str()), QString(key.first.c_str()));
 }
 
-void EncryptWidget::on_pushButton_clicked() {
+void EncryptWidget::on_encryptButton_clicked()
+{
     std::string  encryptedText;
     PlainMessage plainMessage(ui->textToEncrypt->toPlainText().toStdString());
     QString      publicKey  = ui->publicKey->itemData(ui->publicKey->currentIndex()).toString();
@@ -38,4 +39,16 @@ void EncryptWidget::on_pushButton_clicked() {
         encryptedText = plainMessage.encrypt(publicKey.toStdString(), signingKey.toStdString());
 
     ui->textToEncrypt->setPlainText(QString(encryptedText.c_str()));
+}
+
+void EncryptWidget::on_signButton_clicked()
+{
+    std::string  signedText;
+    PlainMessage plainMessage(ui->textToEncrypt->toPlainText().toStdString());
+    QString      signingKey = ui->signingKey->itemData(ui->signingKey->currentIndex()).toString();
+
+    if (!signingKey.isEmpty()) {
+        signedText = plainMessage.sign(signingKey.toStdString());
+        ui->textToEncrypt->setPlainText(QString(signedText.c_str()));
+    }
 }
