@@ -18,9 +18,6 @@ public:
 protected:
     void loadKeys();
 
-private slots:
-    void on_signingCheckBox_toggled(bool checked);
-
 private:
     Ui::EncryptWidget *ui;
 };

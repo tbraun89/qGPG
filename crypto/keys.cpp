@@ -4,10 +4,9 @@
 #include <sstream>
 
 std::list<std::pair<std::string, std::string> > Keys::getKeys(int gpgme_type) {
-    std::list<std::pair<std::string, std::string> > result;
-
     gpgme_check_version(NULL);
 
+    std::list<std::pair<std::string, std::string> > result;
     gpgme_ctx_t   ctx;
     gpgme_key_t   key;
     gpgme_error_t err = gpgme_new(&ctx);
