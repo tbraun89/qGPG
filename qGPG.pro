@@ -14,7 +14,8 @@ SOURCES += main.cpp \
     crypto/plainmessage.cpp \
     crypto/encryptedmessage.cpp \
     crypto/message.cpp \
-    ui/decryptwidget.cpp
+    ui/decryptwidget.cpp \
+    errorhandler.cpp
 
 HEADERS  += \
     ui/mainwindow.h \
@@ -23,7 +24,8 @@ HEADERS  += \
     crypto/plainmessage.h \
     crypto/encryptedmessage.h \
     crypto/message.h \
-    ui/decryptwidget.h
+    ui/decryptwidget.h \
+    errorhandler.h
 
 FORMS    += \
     ui/mainwindow.ui \
