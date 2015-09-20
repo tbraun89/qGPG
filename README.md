@@ -19,6 +19,7 @@ automatically. The binary packages/installers will be created in the
 `release` folder for each system.
 
 1. Install [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/)
+2. Install the `Oracle VM VirtualBox Extension Pack`
 2. Run `./deploy.sh`
 
 ## Contributing
