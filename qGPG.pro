@@ -1,35 +1,13 @@
-QT += core gui
+# TODO add tests if any
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+TEMPLATE = subdirs
 
-TARGET = qGPG
-TEMPLATE = app
+CONFIG += ordered
 
-CONFIG += c++11 largefile
+SUBDIRS = \
+    src \
+    app \
+#    tests
 
-SOURCES += main.cpp \
-    ui/mainwindow.cpp \
-    crypto/keys.cpp \
-    ui/encryptwidget.cpp \
-    crypto/plainmessage.cpp \
-    crypto/encryptedmessage.cpp \
-    crypto/message.cpp \
-    ui/decryptwidget.cpp \
-    errorhandler.cpp
-
-HEADERS  += \
-    ui/mainwindow.h \
-    crypto/keys.h \
-    ui/encryptwidget.h \
-    crypto/plainmessage.h \
-    crypto/encryptedmessage.h \
-    crypto/message.h \
-    ui/decryptwidget.h \
-    errorhandler.h
-
-FORMS    += \
-    ui/mainwindow.ui \
-    ui/encryptwidget.ui \
-    ui/decryptwidget.ui
-
-unix|win32: LIBS += -lgpgme
+app.depends = src
+#tests.depends = src

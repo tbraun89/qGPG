@@ -8,6 +8,7 @@ before there is an release.
 ## Dependencies
 
 * Qt5
+* `gnupg`
 * `libgpgme11`
 
 ## Contributing
