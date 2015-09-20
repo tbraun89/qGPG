@@ -1,3 +1,7 @@
 build/
-qGPG.pro.user
 .vagrant/
+
+qGPG.pro.user
+
+release/*
+!release/.gitkeep

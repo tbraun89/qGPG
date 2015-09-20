@@ -10,6 +10,17 @@ before there is an release.
 * Qt5
 * `libgpgme11`
 
+## Deployment
+
+The deployment for Linux, OS X and Windows will be generated with Vagrant.
+The deployment script will download the box images, setup the environment,
+compile the source on the boxes and create binary packages for each system
+automatically. The binary packages/installers will be created in the
+`release` folder for each system.
+
+1. Install [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/)
+2. Run `./deploy.sh`
+
 ## Contributing
 
 1. Fork it (https://github.com/tbraun89/qGPG/fork)
