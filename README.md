@@ -1,6 +1,6 @@
 # qGPG
 
-This is a GUI Interface for GPG, the current state of this application is
+This is a GUI for GPG, the current state of this application is
 in early development so there are not all functions implemented and you
 may find many bugs or security issues. Use this project only for testing
 before there is an release.
@@ -8,7 +8,6 @@ before there is an release.
 ## Dependencies
 
 * Qt5
-* `gnupg`
 * `libgpgme11`
 
 ## Contributing

@@ -2,4 +2,7 @@ include(../qGPG.pri)
 
 TEMPLATE = app
 
-# TODO add configuration
+SOURCES += \
+    tests.cpp
+
+LIBS += -L../src -lqGPG
