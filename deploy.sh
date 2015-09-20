@@ -10,7 +10,8 @@ do
   cprint YELLOW "Starting deployment for $system ...\n"
   vagrant up "$system"
   vagrant ssh "$system" -- /vagrant/scripts/linux_setup.sh
-  vagrant halt "$system" -- /vagrant/scripts/linux_make.sh "$system"
+  vagrant ssh "$system" -- /vagrant/scripts/linux_make.sh "$system"
+  vagrant halt "$system"
 done
 
 # Run the deployment on OS X
