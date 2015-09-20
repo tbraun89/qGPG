@@ -3,8 +3,6 @@ include(../qGPG.pri)
 TARGET = qGPG
 TEMPLATE = lib
 
-CONFIG += c++11 largefile
-
 SOURCES += \
     ui/mainwindow.cpp \
     crypto/keys.cpp \

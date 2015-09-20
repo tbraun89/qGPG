@@ -9,10 +9,8 @@ for system in "${LINUX_SYSTEMS[@]}"
 do
   cprint YELLOW "Starting deployment for $system ...\n"
   vagrant up "$system"
-
-  # TODO add deployment/build script here
-
-  vagrant halt "$system"
+  vagrant ssh "$system" -- /vagrant/scripts/linux_setup.sh
+  vagrant halt "$system" -- /vagrant/scripts/linux_make.sh "$system"
 done
 
 # Run the deployment on OS X
