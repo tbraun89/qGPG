@@ -45,14 +45,14 @@
    </widget>
    <addaction name="menuHelp"/>
   </widget>
-  <action name="actionLog">
-   <property name="text">
-    <string>Fehler Log</string>
-   </property>
-  </action>
   <action name="actionBugReport">
    <property name="text">
     <string>Fehler melden</string>
+   </property>
+  </action>
+  <action name="actionLog">
+   <property name="text">
+    <string>Log</string>
    </property>
   </action>
  </widget>
