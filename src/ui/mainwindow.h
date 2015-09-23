@@ -18,6 +18,9 @@ public:
 protected:
     void addTabWidgets();
 
+private slots:
+    void on_actionBugReport_triggered();
+
 private:
     Ui::MainWindow *ui;
     QWidget        *encryptWidget;
