@@ -3,6 +3,10 @@
 
 #include "encryptwidget.h"
 #include "decryptwidget.h"
+#include "errorlog.h"
+
+#include <QDesktopServices>
+#include <QUrl>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -22,4 +26,14 @@ void MainWindow::addTabWidgets() {
 
     decryptWidget = new DecryptWidget;
     ui->tabWidget->addTab(decryptWidget, decryptWidget->windowTitle());
+}
+
+void MainWindow::on_actionBugReport_triggered()
+{
+    QDesktopServices::openUrl(QUrl("https://github.com/tbraun89/qGPG/issues"));
+}
+
+void MainWindow::on_actionLog_triggered()
+{
+    ErrorLog::instance().show();
 }

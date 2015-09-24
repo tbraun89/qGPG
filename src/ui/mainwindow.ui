@@ -36,7 +36,25 @@
      <height>19</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Hilfe</string>
+    </property>
+    <addaction name="actionLog"/>
+    <addaction name="actionBugReport"/>
+   </widget>
+   <addaction name="menuHelp"/>
   </widget>
+  <action name="actionBugReport">
+   <property name="text">
+    <string>Fehler melden</string>
+   </property>
+  </action>
+  <action name="actionLog">
+   <property name="text">
+    <string>Log</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

@@ -3,8 +3,6 @@ include(../qGPG.pri)
 TARGET = qGPG
 TEMPLATE = lib
 
-CONFIG += c++11 largefile
-
 SOURCES += \
     ui/mainwindow.cpp \
     crypto/keys.cpp \
@@ -13,7 +11,7 @@ SOURCES += \
     crypto/encryptedmessage.cpp \
     crypto/message.cpp \
     ui/decryptwidget.cpp \
-    errorhandler.cpp
+    ui/errorlog.cpp
 
 HEADERS += \
     ui/mainwindow.h \
@@ -23,11 +21,12 @@ HEADERS += \
     crypto/encryptedmessage.h \
     crypto/message.h \
     ui/decryptwidget.h \
-    errorhandler.h
+    ui/errorlog.h
 
 FORMS += \
     ui/mainwindow.ui \
     ui/encryptwidget.ui \
-    ui/decryptwidget.ui
+    ui/decryptwidget.ui \
+    ui/errorlog.ui
 
 LIBS += -lgpgme

@@ -1,8 +1,15 @@
 #include "ui/mainwindow.h"
+#include "logging.h"
 
 #include <QApplication>
+#include <QMessageLogger>
 
-int main(int argc, char *argv[]) {
+QMessageLogger logger;
+
+int main(int argc, char *argv[])
+{
+    qInstallMessageHandler(loggingHandler);
+
     QApplication app(argc, argv);
     MainWindow mainWindow;
     mainWindow.show();
