@@ -35,7 +35,7 @@ void MainWindow::on_actionDecryptTab_triggered()
 {
     if (tabWidgetAddable("decryptWidgetSingle"))
     {
-        decryptWidget = new DecryptWidget;
+        QWidget *decryptWidget = new DecryptWidget;
         decryptWidget->setProperty("tabID", "decryptWidgetSingle");
         ui->tabWidget->addTab(decryptWidget, QIcon(":/icons/decrypt") ,decryptWidget->windowTitle());
     }
@@ -45,7 +45,7 @@ void MainWindow::on_actionEncryptTab_triggered()
 {
     if (tabWidgetAddable("encryptWidgetSingle"))
     {
-        encryptWidget = new EncryptWidget;
+        QWidget *encryptWidget = new EncryptWidget;
         encryptWidget->setProperty("tabID", "encryptWidgetSingle");
         ui->tabWidget->addTab(encryptWidget, QIcon(":/icons/encrypt"), encryptWidget->windowTitle());
     }
@@ -53,7 +53,9 @@ void MainWindow::on_actionEncryptTab_triggered()
 
 void MainWindow::on_tabWidget_tabCloseRequested(int index)
 {
+    QWidget *currentTab = ui->tabWidget->widget(index);
     ui->tabWidget->removeTab(index);
+    delete currentTab;
 }
 
 bool MainWindow::tabWidgetAddable(QString name)

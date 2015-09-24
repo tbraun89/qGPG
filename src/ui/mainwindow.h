@@ -28,8 +28,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    QWidget        *encryptWidget;
-    QWidget        *decryptWidget;
 
     bool tabWidgetAddable(QString name);
 };
