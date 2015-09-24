@@ -15,18 +15,21 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-protected:
-    void addTabWidgets();
-
 private slots:
     void on_actionBugReport_triggered();
 
     void on_actionLog_triggered();
 
+    void on_actionDecryptTab_triggered();
+
+    void on_actionEncryptTab_triggered();
+
+    void on_tabWidget_tabCloseRequested(int index);
+
 private:
     Ui::MainWindow *ui;
-    QWidget        *encryptWidget;
-    QWidget        *decryptWidget;
+
+    bool tabWidgetAddable(QString name);
 };
 
 #endif // MAINWINDOW_H

@@ -29,4 +29,7 @@ FORMS += \
     ui/decryptwidget.ui \
     ui/errorlog.ui
 
+RESOURCES += \
+    resources.qrc
+
 LIBS += -lgpgme

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file alias="decrypt">ui/icons/decrypt.png</file>
+        <file alias="encrypt">ui/icons/encrypt.png</file>
+    </qresource>
+</RCC>

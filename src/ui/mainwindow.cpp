@@ -10,22 +10,15 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow) {
+    ui(new Ui::MainWindow)
+{
 
     ui->setupUi(this);
-    addTabWidgets();
 }
 
-MainWindow::~MainWindow() {
+MainWindow::~MainWindow()
+{
     delete ui;
-}
-
-void MainWindow::addTabWidgets() {
-    encryptWidget = new EncryptWidget;
-    ui->tabWidget->addTab(encryptWidget, encryptWidget->windowTitle());
-
-    decryptWidget = new DecryptWidget;
-    ui->tabWidget->addTab(decryptWidget, decryptWidget->windowTitle());
 }
 
 void MainWindow::on_actionBugReport_triggered()
@@ -36,4 +29,44 @@ void MainWindow::on_actionBugReport_triggered()
 void MainWindow::on_actionLog_triggered()
 {
     ErrorLog::instance().show();
+}
+
+void MainWindow::on_actionDecryptTab_triggered()
+{
+    if (tabWidgetAddable("decryptWidgetSingle"))
+    {
+        QWidget *decryptWidget = new DecryptWidget;
+        decryptWidget->setProperty("tabID", "decryptWidgetSingle");
+        ui->tabWidget->addTab(decryptWidget, QIcon(":/icons/decrypt") ,decryptWidget->windowTitle());
+    }
+}
+
+void MainWindow::on_actionEncryptTab_triggered()
+{
+    if (tabWidgetAddable("encryptWidgetSingle"))
+    {
+        QWidget *encryptWidget = new EncryptWidget;
+        encryptWidget->setProperty("tabID", "encryptWidgetSingle");
+        ui->tabWidget->addTab(encryptWidget, QIcon(":/icons/encrypt"), encryptWidget->windowTitle());
+    }
+}
+
+void MainWindow::on_tabWidget_tabCloseRequested(int index)
+{
+    QWidget *currentTab = ui->tabWidget->widget(index);
+    ui->tabWidget->removeTab(index);
+    delete currentTab;
+}
+
+bool MainWindow::tabWidgetAddable(QString name)
+{
+    for (int i = 0; i < ui->tabWidget->count(); ++i)
+    {
+        if (ui->tabWidget->widget(i)->property("tabID").toString() == name)
+        {
+            return false;
+        }
+    }
+
+    return true;
 }
