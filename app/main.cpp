@@ -6,7 +6,8 @@
 
 QMessageLogger logger;
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
     qInstallMessageHandler(loggingHandler);
 
     QApplication app(argc, argv);

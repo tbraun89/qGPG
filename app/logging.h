@@ -7,7 +7,8 @@
 #include <ctime>
 #include <algorithm>
 
-std::string timeString(std::chrono::system_clock::time_point time) {
+std::string timeString(std::chrono::system_clock::time_point time)
+{
     std::time_t cTime = std::chrono::system_clock::to_time_t(time);
     std::string timeString = std::ctime(&cTime);
 
@@ -17,12 +18,14 @@ std::string timeString(std::chrono::system_clock::time_point time) {
     return timeString;
 }
 
-QString messageToString(QtMsgType type, const char *msg) {
+QString messageToString(QtMsgType type, const char *msg)
+{
     QString logTime(timeString(std::chrono::system_clock::now()).c_str());
     QString logMsg(msg);
     QString logType;
 
-    switch (type) {
+    switch (type)
+    {
     case QtDebugMsg:
         logType = QString("Debug");
         break;
@@ -52,7 +55,5 @@ void loggingHandler(QtMsgType type, const QMessageLogContext &context, const QSt
     if (type != QtDebugMsg || logDebug)
     {
         ErrorLog::instance().addError(type, messageToString(type, localMsg.constData()).toStdString().c_str());
-
-        // TODO implement file handler
     }
 }
