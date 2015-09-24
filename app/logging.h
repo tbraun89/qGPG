@@ -1,5 +1,7 @@
 #include <QApplication>
 
+#include "ui/errorlog.h"
+
 #include <cstdio>
 #include <chrono>
 #include <ctime>
@@ -38,33 +40,19 @@ QString messageToString(QtMsgType type, const char *msg) {
     return QString("[%1][%2] %3").arg(logType, logTime, logMsg);
 }
 
-void fileHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg) {
+void loggingHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg) {
     QByteArray localMsg = msg.toLocal8Bit();
-
-    // TODO use messageToString
-    // TODO write to a log file (generic path depending on system)
-}
+    bool       logDebug = false;
 
 #ifdef QT_DEBUG
-void consoleHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg) {
-    QByteArray localMsg = msg.toLocal8Bit();
-
     fprintf(stderr, "%s\n", messageToString(type, localMsg.constData()).toStdString().c_str());
-}
+    logDebug = true;
 #endif
 
-// TODO implement errorLogHandler
-void guiHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg) {
-    QByteArray localMsg = msg.toLocal8Bit();
+    if (type != QtDebugMsg || logDebug)
+    {
+        ErrorLog::instance().addError(type, messageToString(type, localMsg.constData()).toStdString().c_str());
 
-    switch (type) {
-    case QtDebugMsg:
-        break;
-    case QtWarningMsg:
-        break;
-    case QtCriticalMsg:
-        break;
-    case QtFatalMsg:
-        break;
+        // TODO implement file handler
     }
 }

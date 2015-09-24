@@ -3,6 +3,7 @@
 
 #include "encryptwidget.h"
 #include "decryptwidget.h"
+#include "errorlog.h"
 
 #include <QDesktopServices>
 #include <QUrl>
@@ -30,4 +31,9 @@ void MainWindow::addTabWidgets() {
 void MainWindow::on_actionBugReport_triggered()
 {
     QDesktopServices::openUrl(QUrl("https://github.com/tbraun89/qGPG/issues"));
+}
+
+void MainWindow::on_actionLog_triggered()
+{
+    ErrorLog::instance().show();
 }

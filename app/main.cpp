@@ -7,11 +7,7 @@
 QMessageLogger logger;
 
 int main(int argc, char *argv[]) {
-#ifdef QT_DEBUG
-    qInstallMessageHandler(consoleHandler);
-#endif
-    qInstallMessageHandler(fileHandler);
-    qInstallMessageHandler(guiHandler);
+    qInstallMessageHandler(loggingHandler);
 
     QApplication app(argc, argv);
     MainWindow mainWindow;
