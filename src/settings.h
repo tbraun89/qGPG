@@ -10,7 +10,6 @@ class Settings
 {
 public:
     static const QString ORGANIZATION_NAME;
-    static const QString ORGANIZATION_DOMAIN;
     static const QString APPLICATION_NAME;
 
     static Settings& instance()

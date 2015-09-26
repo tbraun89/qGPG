@@ -2,16 +2,15 @@
 
 #include <QVariant>
 
-const QString Settings::ORGANIZATION_NAME   = "tbraun";
-const QString Settings::ORGANIZATION_DOMAIN = "github.com/tbraun89/qGPG";
-const QString Settings::APPLICATION_NAME    = "qGPG";
+const QString Settings::ORGANIZATION_NAME = "qGPG";
+const QString Settings::APPLICATION_NAME  = "qGPG";
 
 Settings::Settings() {}
 Settings::~Settings() {}
 
 void Settings::saveWidgetProperty(QWidget* widget, const char* property)
 {
-    QString key   = QString("widget/%1/%2").arg(widget->objectName(), property);
+    QString key   = QString("widgets/%1/%2").arg(widget->objectName(), property);
     QString value = widget->property(property).toString();
 
     settings.setValue(key, value);
