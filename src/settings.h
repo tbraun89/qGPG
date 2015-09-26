@@ -2,6 +2,9 @@
 #define SETTINGS_H
 
 #include <QString>
+#include <QWidget>
+#include <QMessageLogger>
+#include <QSettings>
 
 class Settings
 {
@@ -17,10 +20,15 @@ public:
     }
     ~Settings();
 
+    void saveWidgetProperty(QWidget* widget, const char* property);
+
 private:
     Settings();
     Settings(const Settings&);
     Settings& operator = (const Settings&);
+
+    QSettings      settings;
+    QMessageLogger logger;
 };
 
 #endif // SETTINGS_H
