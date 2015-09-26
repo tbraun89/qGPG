@@ -23,7 +23,8 @@ HEADERS += \
     crypto/message.h \
     ui/decryptwidget.h \
     ui/errorlog.h \
-    pluginloader.h
+    pluginloader.h \
+    plugin/initializeinterface.h
 
 FORMS += \
     ui/mainwindow.ui \

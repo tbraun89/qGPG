@@ -1,9 +1,14 @@
 #include "pluginloader.h"
 
+#include "plugin/initializeinterface.h"
+
 #include <QCoreApplication>
 #include <QPluginLoader>
 #include <QDir>
 
+// TODO make this class a singelton to load each plugin only once
+// TODO load all available interfaces if a Plugin is loaded
+// TODO provide a functions to access the interfaces
 
 PluginLoader::PluginLoader()
 {
@@ -34,7 +39,12 @@ void PluginLoader::loadPlugins()
 
         if (plugin)
         {
-            // TODO implement the plugin loading
+            InitializeInterface *initializerInterface = qobject_cast<InitializeInterface *>(plugin);
+
+            if (initializerInterface)
+            {
+                pluginList.append(initializerInterface->getPluginDefinition());
+            }
         }
     }
 }

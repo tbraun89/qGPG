@@ -13,7 +13,6 @@ public:
         QString author;
         QString version;
         QString decription;
-        QString path;
     };
 
     PluginLoader();
