@@ -15,6 +15,8 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    void closeEvent(QCloseEvent *event);
+
 private slots:
     void on_actionBugReport_triggered();
 
@@ -30,6 +32,10 @@ private:
     Ui::MainWindow *ui;
 
     bool tabWidgetAddable(QString name);
+
+    void saveSettings();
+
+    void loadSettings();
 };
 
 #endif // MAINWINDOW_H

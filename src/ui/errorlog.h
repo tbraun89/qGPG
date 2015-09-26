@@ -20,6 +20,8 @@ public:
 
     void addError(QtMsgType type, QString msg);
 
+    void hideEvent(QHideEvent *event);
+
 private slots:
     void on_clodeButton_clicked();
 
@@ -29,6 +31,10 @@ private:
     ErrorLog& operator = (const ErrorLog&);
 
     Ui::ErrorLog *ui;
+
+    void saveSettings();
+
+    void loadSettings();
 };
 
 #endif // ERRORLOG_H

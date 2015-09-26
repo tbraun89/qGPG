@@ -1,5 +1,5 @@
 #include "ui/mainwindow.h"
-#include "settings.h"
+#include "settings/settings.h"
 #include "logging.h"
 
 #include <QApplication>
@@ -12,7 +12,6 @@ int main(int argc, char *argv[])
     qInstallMessageHandler(loggingHandler);
 
     QCoreApplication::setApplicationName(Settings::APPLICATION_NAME);
-    QCoreApplication::setOrganizationDomain(Settings::ORGANIZATION_DOMAIN);
     QCoreApplication::setOrganizationName(Settings::ORGANIZATION_NAME);
 
     QApplication app(argc, argv);
