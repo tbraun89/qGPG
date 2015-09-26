@@ -1,0 +1,7 @@
+{
+  "name":        "Demo Plugin",
+  "author":      "Torsten Braun",
+  "website":     "https://github.com/tbraun89/qGPG/",
+  "version":     "1.0",
+  "description": "This is just a demo Plugin."
+}

@@ -1,7 +1,5 @@
 #include "pluginloader.h"
 
-#include "plugin/initializeinterface.h"
-
 #include <QCoreApplication>
 #include <QPluginLoader>
 #include <QDir>
@@ -30,26 +28,22 @@ PluginLoader::PluginLoader(QString pluginDirectory) :
 
 void PluginLoader::loadPlugins()
 {
-    QDir pluginsDir;
+    QDir pluginsDir(pluginDirectory);
 
     foreach(auto filename, pluginsDir.entryList(QDir::Files))
     {
         QPluginLoader pluginLoader(pluginsDir.absoluteFilePath(filename));
         QObject       *plugin = pluginLoader.instance();
 
+        if (!pluginLoader.isLoaded())
+            logger.warning(pluginLoader.errorString().toStdString().c_str());
+
         if (plugin)
         {
-            InitializeInterface *initializerInterface = qobject_cast<InitializeInterface *>(plugin);
+            QJsonObject metaData = pluginLoader.metaData()["MetaData"].toObject();
+            logger.debug(QString("Loaded \"%1\" from %2").arg(metaData["name"].toString(), metaData["author"].toString()).toStdString().c_str());
 
-            if (initializerInterface)
-            {
-                pluginList.append(initializerInterface->getPluginDefinition());
-            }
+            // TODO identify implemented interfaces
         }
     }
-}
-
-QVector<PluginLoader::PluginDefinition> PluginLoader::availablePlugins()
-{
-    return pluginList;
 }

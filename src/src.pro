@@ -24,7 +24,7 @@ HEADERS += \
     ui/decryptwidget.h \
     ui/errorlog.h \
     pluginloader.h \
-    plugin/initializeinterface.h
+    plugin/toolbarinterface.h
 
 FORMS += \
     ui/mainwindow.ui \
