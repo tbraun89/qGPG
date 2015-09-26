@@ -12,7 +12,8 @@ SOURCES += \
     crypto/message.cpp \
     ui/decryptwidget.cpp \
     ui/errorlog.cpp \
-    pluginloader.cpp
+    pluginloader.cpp \
+    settings/settings.cpp
 
 HEADERS += \
     ui/mainwindow.h \
@@ -24,7 +25,8 @@ HEADERS += \
     ui/decryptwidget.h \
     ui/errorlog.h \
     pluginloader.h \
-    plugin/toolbarinterface.h
+    plugin/toolbarinterface.h \
+    settings/settings.h
 
 FORMS += \
     ui/mainwindow.ui \

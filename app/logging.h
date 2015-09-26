@@ -1,3 +1,6 @@
+#ifndef LOGGING_H
+#define LOGGING_H
+
 #include <QApplication>
 
 #include "ui/errorlog.h"
@@ -57,3 +60,5 @@ void loggingHandler(QtMsgType type, const QMessageLogContext &context, const QSt
         ErrorLog::instance().addError(type, messageToString(type, localMsg.constData()).toStdString().c_str());
     }
 }
+
+#endif // LOGGING_H
