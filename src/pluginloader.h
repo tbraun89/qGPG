@@ -18,14 +18,11 @@ public:
     PluginLoader();
     PluginLoader(QString pluginDirectory);
 
-    QVector<PluginDefinition> availablePlugins();
-
     void loadPlugins();
 
 private:
     QMessageLogger            logger;
     QString                   pluginDirectory;
-    QVector<PluginDefinition> pluginList;
 };
 
 #endif // PLUGINLOADER_H

@@ -1,7 +1,5 @@
 #include "pluginloader.h"
 
-#include "plugin/initializeinterface.h"
-
 #include <QCoreApplication>
 #include <QPluginLoader>
 #include <QDir>
@@ -37,7 +35,7 @@ void PluginLoader::loadPlugins()
         QPluginLoader pluginLoader(pluginsDir.absoluteFilePath(filename));
         QObject       *plugin = pluginLoader.instance();
 
-        if (!pluginLoader.errorString().isEmpty())
+        if (!pluginLoader.isLoaded())
             logger.warning(pluginLoader.errorString().toStdString().c_str());
 
         if (plugin)
@@ -45,9 +43,4 @@ void PluginLoader::loadPlugins()
             // TODO identify implemented interfaces
         }
     }
-}
-
-QVector<PluginLoader::PluginDefinition> PluginLoader::availablePlugins()
-{
-    return pluginList;
 }

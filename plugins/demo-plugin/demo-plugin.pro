@@ -1,6 +1,6 @@
 include(../../qGPG.pri)
 
-QT -= gui widgets
+QT -= gui
 
 TARGET = $$qtLibraryTarget(demo-plugin)
 TEMPLATE = lib

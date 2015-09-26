@@ -1,6 +1,8 @@
 #include "demo-plugin.h"
 
-QString DemoPlugin::test()
+QVector<QAction> DemoPlugin::toolbarActions()
 {
-    return "Test";
+    QVector<QAction> actions;
+
+    return actions;
 }
