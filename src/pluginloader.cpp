@@ -40,6 +40,9 @@ void PluginLoader::loadPlugins()
 
         if (plugin)
         {
+            QJsonObject metaData = pluginLoader.metaData()["MetaData"].toObject();
+            logger.debug(QString("Loaded \"%1\" from %2").arg(metaData["name"].toString(), metaData["author"].toString()).toStdString().c_str());
+
             // TODO identify implemented interfaces
         }
     }
