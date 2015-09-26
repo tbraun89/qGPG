@@ -13,7 +13,8 @@ SOURCES += \
     ui/decryptwidget.cpp \
     ui/errorlog.cpp \
     pluginloader.cpp \
-    settings/settings.cpp
+    settings/settings.cpp \
+    ui/settingswindow.cpp
 
 HEADERS += \
     ui/mainwindow.h \
@@ -26,13 +27,15 @@ HEADERS += \
     ui/errorlog.h \
     pluginloader.h \
     plugin/toolbarinterface.h \
-    settings/settings.h
+    settings/settings.h \
+    ui/settingswindow.h
 
 FORMS += \
     ui/mainwindow.ui \
     ui/encryptwidget.ui \
     ui/decryptwidget.ui \
-    ui/errorlog.ui
+    ui/errorlog.ui \
+    ui/settingswindow.ui
 
 RESOURCES += \
     resources.qrc

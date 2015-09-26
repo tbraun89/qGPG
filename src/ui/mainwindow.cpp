@@ -6,6 +6,7 @@
 #include "encryptwidget.h"
 #include "decryptwidget.h"
 #include "errorlog.h"
+#include "settingswindow.h"
 
 #include "settings/settings.h"
 
@@ -64,6 +65,12 @@ void MainWindow::on_tabWidget_tabCloseRequested(int index)
     delete currentTab;
 }
 
+void MainWindow::on_actionSettings_triggered()
+{
+    SettingsWindow *settingsWindow = new SettingsWindow();
+    settingsWindow->show();
+}
+
 bool MainWindow::tabWidgetAddable(QString name)
 {
     for (int i = 0; i < ui->tabWidget->count(); ++i)
@@ -107,3 +114,4 @@ void MainWindow::loadSettings()
     if (width && height)
         resize(width, height);
 }
+

@@ -17,7 +17,7 @@
    <string>qGPG</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
@@ -49,6 +49,13 @@
     <addaction name="actionLog"/>
     <addaction name="actionBugReport"/>
    </widget>
+   <widget class="QMenu" name="menuExtras">
+    <property name="title">
+     <string>E&amp;xtras</string>
+    </property>
+    <addaction name="actionSettings"/>
+   </widget>
+   <addaction name="menuExtras"/>
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QToolBar" name="toolBar">
@@ -66,12 +73,12 @@
   </widget>
   <action name="actionBugReport">
    <property name="text">
-    <string>Fehler melden</string>
+    <string>Fehler melden...</string>
    </property>
   </action>
   <action name="actionLog">
    <property name="text">
-    <string>Log</string>
+    <string>Log...</string>
    </property>
   </action>
   <action name="actionDecryptTab">
@@ -99,6 +106,11 @@
    </property>
    <property name="toolTip">
     <string>Verschlüsseln</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>&amp;Einstellungen...</string>
    </property>
   </action>
  </widget>
