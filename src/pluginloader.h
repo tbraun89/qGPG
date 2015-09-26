@@ -10,21 +10,26 @@
 class PluginLoader
 {
 public:
-    struct PluginDefinition {
-        QString name;
-        QString author;
-        QString version;
-        QString decription;
-    };
+    static PluginLoader& instance()
+    {
+        static PluginLoader myInstance;
+        return myInstance;
+    }
+    ~PluginLoader() {}
 
-    PluginLoader();
-    PluginLoader(QString pluginDirectory);
+    // must be called before loadPlugins()
+    void setPluginDirectory(QString pluginDirectory);
 
+    // must be called before accessing Plugins
     void loadPlugins();
 
     void addToolbarActions();
 
 private:
+    PluginLoader();
+    PluginLoader(const PluginLoader&);
+    PluginLoader& operator = (const PluginLoader&);
+
     QMessageLogger              logger;
     QString                     pluginDirectory;
     QVector<ToolbarInterface *> toolbarInterfaces;

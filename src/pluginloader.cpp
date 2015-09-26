@@ -4,10 +4,6 @@
 #include <QPluginLoader>
 #include <QDir>
 
-// TODO make this class a singelton to load each plugin only once
-// TODO load all available interfaces if a Plugin is loaded
-// TODO provide a functions to access the interfaces
-
 PluginLoader::PluginLoader()
 {
 #if defined(QT_DEBUG)
@@ -21,9 +17,9 @@ PluginLoader::PluginLoader()
 #endif
 }
 
-PluginLoader::PluginLoader(QString pluginDirectory) :
-    pluginDirectory(pluginDirectory)
+void PluginLoader::setPluginDirectory(QString pluginDirectory)
 {
+    this->pluginDirectory = pluginDirectory;
 }
 
 void PluginLoader::loadPlugins()

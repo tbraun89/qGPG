@@ -16,8 +16,7 @@ int main(int argc, char *argv[])
     MainWindow mainWindow;
     mainWindow.show();
 
-    PluginLoader pluginLoader;
-    pluginLoader.loadPlugins();
+    PluginLoader::instance().loadPlugins();
 
     return app.exec();
 }
