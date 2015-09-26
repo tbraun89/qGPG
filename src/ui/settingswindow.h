@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QMessageLogger>
+#include <QListWidgetItem>
 
 namespace Ui {
 class SettingsWindow;
@@ -16,10 +17,16 @@ public:
     explicit SettingsWindow(QWidget *parent = 0);
     ~SettingsWindow();
 
+private slots:
+    void on_settingsList_itemActivated(QListWidgetItem *item);
+
 private:
     Ui::SettingsWindow *ui;
+    QMessageLogger     logger;
 
     bool eventFilter(QObject *object, QEvent *event);
+    void loadSettingList();
+    void loadSettingTabs(QString name);
 };
 
 #endif // SETTINGSWINDOW_H

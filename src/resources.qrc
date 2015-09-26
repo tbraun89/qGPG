@@ -2,5 +2,6 @@
     <qresource prefix="/icons">
         <file alias="decrypt">ui/icons/decrypt.png</file>
         <file alias="encrypt">ui/icons/encrypt.png</file>
+        <file alias="qgpg_settings">ui/icons/qgpg_settings.png</file>
     </qresource>
 </RCC>
