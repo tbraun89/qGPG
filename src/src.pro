@@ -12,7 +12,7 @@ SOURCES += \
     crypto/message.cpp \
     ui/decryptwidget.cpp \
     ui/errorlog.cpp \
-    settings.cpp
+    settings/settings.cpp
 
 HEADERS += \
     ui/mainwindow.h \
@@ -23,7 +23,7 @@ HEADERS += \
     crypto/message.h \
     ui/decryptwidget.h \
     ui/errorlog.h \
-    settings.h
+    settings/settings.h
 
 FORMS += \
     ui/mainwindow.ui \

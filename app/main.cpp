@@ -1,5 +1,5 @@
 #include "ui/mainwindow.h"
-#include "settings.h"
+#include "settings/settings.h"
 #include "logging.h"
 
 #include <QApplication>

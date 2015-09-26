@@ -2,6 +2,7 @@
 #define SETTINGS_H
 
 #include <QString>
+#include <QVariant>
 #include <QWidget>
 #include <QMessageLogger>
 #include <QSettings>
@@ -19,7 +20,11 @@ public:
     }
     ~Settings();
 
-    void saveWidgetProperty(QWidget* widget, const char* property);
+    void     saveWidgetProperty(QWidget* widget, const char* property);
+    QVariant loadWidgetProperty(QWidget* widget, const char* property);
+
+protected:
+    QString widgetKey(QWidget* widget, const char* property);
 
 private:
     Settings();
