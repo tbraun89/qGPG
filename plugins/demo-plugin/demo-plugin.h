@@ -15,7 +15,7 @@ class DemoPlugin : public QObject, ToolbarInterface
     Q_INTERFACES(ToolbarInterface)
 
 public:
-    QVector<QAction> toolbarActions() Q_DECL_OVERRIDE;
+    QVector<QAction *> toolbarActions() Q_DECL_OVERRIDE;
 };
 
 #endif // DEMOPLUGIN_H

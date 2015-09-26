@@ -3,6 +3,7 @@
 #include <QCoreApplication>
 #include <QPluginLoader>
 #include <QDir>
+#include <QAction>
 
 PluginLoader::PluginLoader()
 {
@@ -44,5 +45,13 @@ void PluginLoader::loadPlugins()
             if (toolbarInterface)
                 toolbarInterfaces.append(toolbarInterface);
         }
+    }
+}
+
+void PluginLoader::addToolbarActions(QToolBar *toolBar)
+{
+    for (ToolbarInterface *toolbarInterface : toolbarInterfaces)
+    {
+        toolBar->addActions(toolbarInterface->toolbarActions().toList());
     }
 }

@@ -6,6 +6,7 @@
 #include <QVector>
 #include <QString>
 #include <QMessageLogger>
+#include <QToolBar>
 
 class PluginLoader
 {
@@ -23,7 +24,7 @@ public:
     // must be called before accessing Plugins
     void loadPlugins();
 
-    void addToolbarActions();
+    void addToolbarActions(QToolBar *toolBar);
 
 private:
     PluginLoader();
