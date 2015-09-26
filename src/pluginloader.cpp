@@ -30,21 +30,19 @@ PluginLoader::PluginLoader(QString pluginDirectory) :
 
 void PluginLoader::loadPlugins()
 {
-    QDir pluginsDir;
+    QDir pluginsDir(pluginDirectory);
 
     foreach(auto filename, pluginsDir.entryList(QDir::Files))
     {
         QPluginLoader pluginLoader(pluginsDir.absoluteFilePath(filename));
         QObject       *plugin = pluginLoader.instance();
 
+        if (!pluginLoader.errorString().isEmpty())
+            logger.warning(pluginLoader.errorString().toStdString().c_str());
+
         if (plugin)
         {
-            InitializeInterface *initializerInterface = qobject_cast<InitializeInterface *>(plugin);
-
-            if (initializerInterface)
-            {
-                pluginList.append(initializerInterface->getPluginDefinition());
-            }
+            // TODO identify implemented interfaces
         }
     }
 }

@@ -1,15 +1,16 @@
 #ifndef INITIALIZEINTERFACE_H
 #define INITIALIZEINTERFACE_H
 
-#include "pluginloader.h"
+// TODO remove this interface use "QJsonObject QPluginLoader::metaData() const"
 
 #include <QtPlugin>
+#include <QString>
 
 class InitializeInterface
 {
 public:
     virtual ~InitializeInterface() {}
-    virtual PluginLoader::PluginDefinition getPluginDefinition();
+    virtual QString test() = 0;
 };
 
 #define InitializeInterface_iid "qGPG.plugin.InitializeInterface"
