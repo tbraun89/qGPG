@@ -1,6 +1,8 @@
 #ifndef PLUGINLOADER_H
 #define PLUGINLOADER_H
 
+#include "plugin/toolbarinterface.h"
+
 #include <QVector>
 #include <QString>
 #include <QMessageLogger>
@@ -20,9 +22,12 @@ public:
 
     void loadPlugins();
 
+    void addToolbarActions();
+
 private:
-    QMessageLogger            logger;
-    QString                   pluginDirectory;
+    QMessageLogger              logger;
+    QString                     pluginDirectory;
+    QVector<ToolbarInterface *> toolbarInterfaces;
 };
 
 #endif // PLUGINLOADER_H
