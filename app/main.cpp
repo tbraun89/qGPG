@@ -1,5 +1,7 @@
 #include "ui/mainwindow.h"
+
 #include "logging.h"
+#include "pluginloader.h"
 
 #include <QApplication>
 #include <QMessageLogger>
@@ -13,6 +15,8 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     MainWindow mainWindow;
     mainWindow.show();
+
+    PluginLoader::instance().loadPlugins();
 
     return app.exec();
 }

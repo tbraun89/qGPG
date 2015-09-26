@@ -7,6 +7,7 @@ CONFIG += ordered
 SUBDIRS = \
     src \
     app \
+    plugins \
     tests
 
 app.depends = src

@@ -11,7 +11,8 @@ SOURCES += \
     crypto/encryptedmessage.cpp \
     crypto/message.cpp \
     ui/decryptwidget.cpp \
-    ui/errorlog.cpp
+    ui/errorlog.cpp \
+    pluginloader.cpp
 
 HEADERS += \
     ui/mainwindow.h \
@@ -21,7 +22,9 @@ HEADERS += \
     crypto/encryptedmessage.h \
     crypto/message.h \
     ui/decryptwidget.h \
-    ui/errorlog.h
+    ui/errorlog.h \
+    pluginloader.h \
+    plugin/toolbarinterface.h
 
 FORMS += \
     ui/mainwindow.ui \

@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include "pluginloader.h"
+
 #include "encryptwidget.h"
 #include "decryptwidget.h"
 #include "errorlog.h"
@@ -12,8 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-
     ui->setupUi(this);
+    PluginLoader::instance().addToolbarActions(ui->toolBar);
 }
 
 MainWindow::~MainWindow()

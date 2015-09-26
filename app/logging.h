@@ -47,7 +47,7 @@ void loggingHandler(QtMsgType type, const QMessageLogContext &context, const QSt
     QByteArray localMsg = msg.toLocal8Bit();
     bool       logDebug = false;
 
-#ifdef QT_DEBUG
+#if defined(QT_DEBUG)
     fprintf(stderr, "%s\n", messageToString(type, localMsg.constData()).toStdString().c_str());
     logDebug = true;
 #endif
